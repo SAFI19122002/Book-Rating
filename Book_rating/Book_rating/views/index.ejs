@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs') %>
+<div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, libero. Quos illum non cum suscipit
+    fugit perspiciatis ad sapiente tempora dolores ex, voluptatibus dicta nulla? Ullam atque voluptatum numquam
+    ut facere distinctio. Animi repellendus, inventore hic accusantium, illum voluptatem possimus necessitatibus
+    ex excepturi tempora mollitia sed veritatis, dolore earum eius.
+</div>
+<div>
+    <div> 
+        <ul>
+            <% books.forEach(book => { %>
+                <li>
+                    <form action="/submit">
+                        <input type="text" name="isbn">
+                        <button type="submit">submit</button>
+                    </form>
+                    <a href="/body"><h2><%= book.title %></h2></a>
+                    <img src="https://covers.openlibrary.org/b/id/-L.jpg" alt="image not found">
+                    <h5>Author: <%= book.authour %></h5>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>
